@@ -389,15 +389,17 @@ function initialize() {
     }
 
     document.getElementById("play").disabled = true;
-    document.getElementById("resume").disabled = false;
+    document.getElementById("restart").disabled = false;
     popoverList[0]._isEnabled = false;
 }
 
 function reinitialize(){
     for(let i=0; i<9; i++) cells[i].innerHTML = ``;
     document.getElementById("play").disabled = false;
-    document.getElementById("resume").disabled = true;
+    document.getElementById("restart").disabled = true;
     popoverList[0]._isEnabled = true;
+    removeHandler()
+    listener_functions = []
 }
 
 function closeModal(){

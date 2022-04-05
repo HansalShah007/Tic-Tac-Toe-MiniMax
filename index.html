@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="style.css" rel="stylesheet">
+
+    <title>Tic-Tac-Toe!</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid topbar">
+            <div class="navbar-brand mb-0 h1">
+                Tic-Tac-Toe
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="panel">
+
+        <div class="controls">
+
+            <h2>Settings</h2>
+
+            <div class="form-check form-switch toggle-switch">
+                <input class="form-check-input toggle" type="checkbox" role="switch" id="firstTurn" checked>
+                <label class="form-check-label toggle-text" for="flexSwitchCheckChecked">Make the first move</label>
+            </div>
+
+            <br>
+
+            <span style="margin: 5px; font-size: larger; font-weight: bold;">Pick Your Symbol</span>
+            <div>
+                <input type="radio" class="btn-check" name="btnradio" id="X" autocomplete="off" checked>
+                <label class="btn btn-outline-dark" for="X">X</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="O" autocomplete="off">
+                <label class="btn btn-outline-dark" for="O">O</label>
+            </div>
+            <br>
+            <div class="buttons">
+                <button id="play" onclick="initialize()" type="button" class="btn btn-success">Play!</button>
+                <button id="resume" onclick="reinitialize()" type="button" class="btn btn-danger"
+                    disabled>Restart</button>
+            </div>
+
+        </div>
+
+        <div id="board" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="top"
+            data-bs-content="Click on Play! to start the game">
+            <div class="row1">
+                <div class="cell1"></div>
+                <div class="cell2"></div>
+                <div class="cell3"></div>
+            </div>
+            <div class="row2">
+                <div class="cell4"></div>
+                <div class="cell5"></div>
+                <div class="cell6"></div>
+            </div>
+            <div class="row3">
+                <div class="cell7"></div>
+                <div class="cell8"></div>
+                <div class="cell9"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div id="modal-title" style="font-weight: bold;"></div>
+            <button onclick="closeModal()" type="button" class="btn btn-danger"
+                style="transform: scale(55%); margin-left: auto;">
+                <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-x" viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </div>
+        <div class="card-body text-dark">
+            <h6 id="modal-text" class="card-title"></h6>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
